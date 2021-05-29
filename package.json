@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack  && node ./distServer/server.js",
-    "front": "  webpack serve  "
+   "postinstall":"tsc"
   },
   "author": "",
   "license": "ISC",
