@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack  && node ./distServer/server.js",
+    "start": "node ./distServer/server.js",
    "postinstall":"tsc"
   },
   "author": "",
