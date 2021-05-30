@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node ./distServer/server.js",
    "postinstall":"tsc",
-    "heroku-postbuild": "webpack"
+    "build": "webpack"
   },
   "author": "",
   "license": "ISC",
