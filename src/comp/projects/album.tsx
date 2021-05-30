@@ -9,7 +9,7 @@ export const Album =(props:iprops)=>{
      let [wait,setWait]=useState(false)
      let [pointsList,setPointsList]=useState<number[]>([])
     let [bigImg , setBigImg] =useState(false)
-    const changeImage= (e:React.MouseEvent |React.TouchEvent )=>{
+   const changeImage= (e:React.MouseEvent |React.TouchEvent )=>{
         let right:number[]=[];
         let items=[];
         let imgs=[]
@@ -32,7 +32,12 @@ export const Album =(props:iprops)=>{
                  if (pointsList.length===5 && e.type === 'mousemove'){
                    let img1=document.getElementById('albumItem') as HTMLImageElement
                    let imgSrc1=img1.getAttribute('src') as string
-                   items.push(img1.nextElementSibling as HTMLImageElement)
+                   let imgGroup=img1.nextElementSibling as HTMLDivElement
+                   let imagesGroupChildren = imgGroup.children
+                    for (let i=0;i<imagesGroupChildren.length;i++){
+                     items.push(imagesGroupChildren.item(i))
+                    }
+                  
                    while (true) {
                      if (items[items.length-1]?.nextElementSibling && ( items[items.length-1]?.nextElementSibling as HTMLImageElement).getAttribute('src') ) {
                        items.push(items[items.length-1]?.nextElementSibling)
