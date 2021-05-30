@@ -17,6 +17,6 @@ let index = fs.readFileSync(path.resolve(__dirname,'../dist/index.html'),{encodi
 index.replace("<div id='root'></div>",`<div id='root'>${JSON.stringify(app)}</div>`)
 res.status(200).send(index)
 })
-home.listen({Port,"0.0.0.0"},()=>{
+home.listen({port:Port,host:"0.0.0.0"},()=>{
     console.log('connected to B3d')
 })
