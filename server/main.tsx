@@ -4,7 +4,7 @@ import {StaticRouter} from 'react-router'
 import App from '../src/comp/app'
 import fs from  'fs'
 import path from 'path'
-const Port =process.env.PORT || 9000
+const Port =process.env.PORT  || 9000
 const home = express()
 home.use(express.static(path.resolve('./src/')))
 home.use(express.static(path.resolve('./dist/')))
