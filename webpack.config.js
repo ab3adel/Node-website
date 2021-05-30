@@ -4,7 +4,7 @@ const HtmlWebpackPlugin =require('html-webpack-plugin')
 const nodeExternals= require('webpack-node-externals')
 const browser ={
     entry: path.resolve(__dirname,'./browser/main.tsx'),
-    mode:'development',
+
     module: {
 
       rules: [
@@ -36,23 +36,19 @@ const browser ={
       path: path.resolve(__dirname, 'dist'),
       publicPath:'/'
     },
- devServer:{
-        contentBase:path.resolve(__dirname, 'dist'),
-            compress:true,
-            //publicPath:'/dist/',
-            port:9000
-           
-    },
+
   plugins: [new webpack.DefinePlugin(
      {
          isBrowser:true
      }
-   )],
+   ),new HtmlWebpackPlugin({
+     favicon:'./favicon.gif'
+   })],
    watchOptions: {
     poll: true,
     ignored: /node_modules/
   },
-  devtool:'source-map'
+  devtool:'eval'
   
 }
 const server={
