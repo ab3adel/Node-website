@@ -48,7 +48,7 @@ const browser ={
     poll: true,
     ignored: /node_modules/
   },
-   ,performance: {
+   performance: {
     hints:false
   }
   
