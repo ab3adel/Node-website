@@ -4,7 +4,7 @@ import {StaticRouter} from 'react-router'
 import App from '../src/comp/app'
 import fs from  'fs'
 import path from 'path'
-const Port =process.env.PORT  || 9000
+
 const home = express()
 home.use(express.static(path.resolve('./src/')))
 home.use(express.static(path.resolve('./dist/')))
@@ -17,6 +17,6 @@ let index = fs.readFileSync(path.resolve(__dirname,'../dist/index.html'),{encodi
 index.replace("<div id='root'></div>",`<div id='root'>${JSON.stringify(app)}</div>`)
 res.status(200).send(index)
 })
-home.listen(Port,()=>{
-    console.log('connected')
+home.listen(process.env.PORT  || 9000,'0.0.0.0',()=>{
+    console.log('connected to B3d')
 })
