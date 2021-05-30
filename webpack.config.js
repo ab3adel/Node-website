@@ -48,7 +48,10 @@ const browser ={
     poll: true,
     ignored: /node_modules/
   },
-  devtool:'eval'
+   ,performance: {
+    hints:false
+  }
+  
   
 }
 const server={
