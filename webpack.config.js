@@ -41,9 +41,9 @@ const browser ={
      {
          isBrowser:true
      }
-   ),new HtmlWebpackPlugin({
+   )/*,new HtmlWebpackPlugin({
      favicon:'./favicon.gif'
-   })],
+   })*/],
    watchOptions: {
     poll: true,
     ignored: /node_modules/
