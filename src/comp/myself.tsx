@@ -164,11 +164,7 @@ export const Myself = ()=>{
       },[])
     return (
         
-         <div className="me" 
-         onMouseMove={moveMe} 
-         onTouchMove={moveMe}
-         onMouseLeave={returnMe}
-         onTouchEnd={returnMe}>
+         <div className="me">
            <div className="meUp">
         <img src={b3d} id="me"/>
           <span  >M</span><span >O</span><span >H</span><span >A</span><span >M</span><span >M</span>
