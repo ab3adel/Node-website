@@ -1,0 +1,415 @@
+html {
+    width:100%;
+    margin:0px;
+    
+}
+.main {
+    display: grid;
+    grid-template-rows: 50px 360px 1fr 30px ;
+    background-image: linear-gradient(to left top , rgb(175, 190, 175,0.4),rgb(0, 0, 0)) ;
+    background-repeat: no-repeat;
+    background-size: 100% 80% , cover;
+    background-blend-mode: darken ,screen ;  
+    background-position: top ,bottom; 
+    grid-template-columns: 100vw;
+    height: fit-content;
+    min-height: 101vh;
+}
+.header {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 30px;
+    background:linear-gradient(to right ,rgb(1, 78, 1),green);
+    box-shadow: 7px 7px 8px  honeydew;
+    height: 30px;
+}
+.header a {
+    color:honeydew;
+}
+.header a:hover {
+    font-size:larger ;
+    font-weight: 700;
+    text-shadow: 0.3px 0.4px 0.4px wheat;
+    transition: 0.5s;
+
+}
+.body {
+    display: grid;
+    grid-template-rows: repeat(3,100vh);
+    grid-template-columns: 100vw;
+    grid-row:2/4;
+}
+br {
+    border-radius: 5px bold wheat;
+}
+.container {
+    display:grid;
+    grid-template-columns: 0.5fr 1fr ;
+
+}
+.image{
+    width:200px;
+    height: 200px;
+    border-radius: 30px;
+    box-shadow: 5px 6px 6px grey;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+.detail {
+    display:flex;
+    flex-direction: row;
+    font-size: x-large;
+    color: honeydew;
+    font-weight: 600;
+    justify-content: center;
+    text-align: center;
+}
+.rain{
+    width:20px;
+    height:20px;
+    border-radius:50px;
+    z-index:5;
+    opacity:0.7;
+    position: absolute;
+    animation: raining 1s cubic-bezier(0.47, 0, 0.745, 0.715) forwards ;
+}
+@keyframes raining {
+    from {
+        position: absolute;
+    }
+    to{
+        position: relative;
+        top:-120vh;
+        
+    }
+}
+
+.me {
+    display:flex;
+    flex-direction: column;
+    font-size: large;
+    color:honeydew ;
+    background: linear-gradient(to left ,black ,rgb(136, 133, 133));
+    border-radius: 40px;
+    position: relative;
+}
+#me {
+    width:250px;
+    height: 250px;
+    border-radius: 40px;
+}
+.meUp{
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: large;
+    position: relative;
+}
+.meDown {
+    height: 160px;
+    flex-direction: column;
+    font-size: 1.5rem;
+    color:honeydew;
+    display:flex;
+    text-align: center;
+    align-items: center;
+ 
+}
+.wise {
+    display:none;
+    animation:wise 2s ease forwards  ;
+    opacity:0.3;
+}
+.wise span {
+    animation:1s  linear alternate 5;
+    display:block;
+}
+@keyframes wise {
+    0% {
+        opacity:0.3
+    }
+    35%{
+        opacity:0.6
+    }
+    80%{
+        opacity:0.8
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes beat {
+    from {
+        transform: scale3d(1,1,1);
+    }
+    to {
+        transform: scale3d(1.5,1.5,1.5);
+        color:green;
+    }
+}
+
+
+ .myName{
+     display:inline-block;
+     visibility: hidden ;
+     transform:translateX(50px);
+     font-size: 3.5rem;
+     text-shadow: 3px 3px 3px rgb(88, 84, 84);
+     animation: 1.5s forwards 1s linear;
+ 
+ }
+ @keyframes colorMe {
+     from{
+         color: rgb(53, 52, 52,0.5);
+     }
+     to{
+         color:honeydew;
+    }
+ }
+ .bubbles{
+     display:block;
+     width:20px;
+     height:20px;
+     border-radius: 50px;
+     position: absolute;
+    z-index: 5;
+   bottom:-5px;
+     animation: bubbles 4s ease-out forwards 1 ;
+     opacity: 0.4;
+ }
+ @keyframes bubbles {
+     
+     to {
+         bottom:298px;
+         visibility: hidden;
+     }
+ }
+.about {
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    grid-row: 2/4;
+    font-size: large;
+    font-weight: bold;
+    height: 100vh;
+    border-radius: 20px;
+}
+#footer {
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+
+    border-radius: 30px;
+    background:linear-gradient(to right ,rgb(17, 17, 17,0.3),transparent );
+    box-shadow: 7px 7px 8px  honeydew;
+    padding: 5px;
+    grid-row:3/3;
+    color:white;
+}
+.footerLink {
+    display:none;
+    flex-direction: column;
+    justify-content: center;
+    grid-row:1/1;
+    grid-column: 2/2;
+    align-items: center;
+    background: linear-gradient(to left ,transparent ,rgb(136, 133, 133));
+    border-radius: 40px;
+    transform: translateX(200px);
+    height: 100%;
+    animation: 2s ease-in forwards;
+    transition-duration: 500ms;
+    margin: 5px;
+  
+}
+@keyframes linkMove {
+    from {
+        box-shadow: white 90px 4px 2px ;
+    }
+    to {
+        box-shadow: grey 2px 2px 2px ;
+     transform: translateX(0px);
+    }
+}
+.footerLink a{
+    font-size: 1.2em;
+    font-weight: bolder;
+    text-shadow: 3px 4px 5px grey;
+    color:wheat;
+}
+
+.footerLink a:hover {
+    font-size: x-large;
+    text-shadow: 3px 6px 6px grey;
+    transform: rotateZ(10deg);
+    transition: 1s;
+    font-weight: bolder;
+}
+.footerLink1 {
+    display:none;
+    flex-direction: column;
+    justify-content: center;
+    grid-row:3/3;
+    grid-column: 2/2;
+    align-items: center;
+    background: linear-gradient(to left ,transparent ,rgb(136, 133, 133));
+    border-radius: 40px;
+    transform: translateX(200px);
+    height: 100%;
+    animation: 2s ease-in forwards;
+    transition-duration: 500ms;
+    margin: 5px;
+  
+}
+.footerLink1 a{
+    font-size: 1.2em;
+    font-weight: bolder;
+    text-shadow: 3px 4px 5px grey;
+    color:wheat;
+}
+
+.footerLink1 a:hover {
+    font-size: x-large;
+    text-shadow: 3px 6px 6px grey;
+    transform: rotateZ(10deg);
+    transition: 1s;
+    font-weight: bolder;
+}
+
+.last {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 30px;
+    background:linear-gradient(to right ,rgb(1, 78, 1),green);
+    box-shadow: 7px 7px 8px  honeydew;
+    height: 30px;
+    margin-top: 5px;
+}
+.last a {
+    width:200px;
+}
+.fbSocial {
+    width:20%;
+}
+.teleSocial {
+   width:15%;
+   border-radius: 50px;
+   
+}
+.githubSocial {
+    width:15%;
+    border-radius: 50px;
+}
+.lightenLink {
+    box-shadow: black 4px 5px 6px ;
+    
+    transition: ease-in;
+    transition-duration: 1s;
+    border-radius: 30px;
+}
+
+/* #################################3 IPad ViEW ####################### */
+
+@media only screen and (max-width:900px) and (min-width:420px){
+    .myName {
+        font-size: medium;
+    }
+}
+
+
+/*      ###############################  MOBILE VIEW #######################   */
+
+
+@media only screen and (max-width:420px) and (min-width:300px){
+   
+    .main {
+        display: grid;
+        grid-template-rows: 50px 360px 1fr 50px ;
+        background-image: linear-gradient(to left top , rgb(175, 190, 175,0.4),rgb(0, 0, 0)) ;
+        background-repeat: no-repeat;
+        background-size: 100% , cover;
+        background-blend-mode: darken ,screen ;  
+        background-position: top ,bottom; 
+        width:98vw;
+        min-height: 100vh;
+    }
+    .header {
+        display:flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        border-radius: 30px;
+        background:linear-gradient(to right ,rgb(1, 78, 1),green);
+        box-shadow: 7px 7px 8px  honeydew;
+        height: 30px;
+        width:96vw;
+    }
+    .body {
+        display: grid;
+        grid-template-rows: repeat(3,100vh);
+    }
+    .me {
+        width:97vw
+    }
+    #me{
+        width: 150px;
+        height: 150px;
+        opacity: 0.2;
+        animation: Me 1s ease-in-out 5s forwards  ;
+       
+    }
+@keyframes Me {
+    0%{
+        opacity: 0.2;
+    }
+    25%{
+        opacity:0.7 ;
+    }
+    50% {
+        transform: rotateZ(180deg);
+    }
+    100%{
+        transform: rotateZ(0deg);
+        opacity: 1;
+    }
+    
+}
+.meUp {
+    font-size: small;
+}
+.meDown {
+    font-size:medium;
+}
+    .myName {
+        font-size:small;
+    }
+   
+   
+  .about {
+      font-size: medium;
+  }
+  .last a {
+    width:80px;
+}
+}
+/* ############################# small view ##############3 /*/
+@media only screen  and (max-width:300px) {
+    #me {
+        width:100px;
+        height: 100px;
+    }
+    .me {
+        font-size: smaller;
+    }
+   .myName{
+       font-size: smaller;
+   }
+}
