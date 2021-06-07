@@ -5,12 +5,10 @@ export const About= () =>{
 
     return (
         <div className="about">
-          this site will be updated periodically , and add to   <br></br>
-           more and more projects , <br></br>
-          i am showing in this site samples of my work, <br></br>
-                
-         my next projects  will be in C# and online game <br></br>
-             
+          this site is a portofolio made with Node <br></br>
+         for the backend and React for the front end <br></br>
+        from <a href="https://github.com/ab3adel/Node-website">here</a> you can find the source code<br></br>
+       it will be updated and improvments periodicaly <br></br>
 
         </div>
     )
