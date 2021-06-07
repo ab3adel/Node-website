@@ -1,6 +1,4 @@
-import React,{useState} from 'react'
-import show from '../../images/show.png'
-
+import React,{useEffect, useState} from 'react'
 interface iprops {subject:string[]}
 export const Album =(props:iprops)=>{
     let [doubleTouch,setDoubleTouch]=useState(0)
@@ -8,8 +6,9 @@ export const Album =(props:iprops)=>{
     let [changingImage,setChangeingImage]=useState(false)
      let [wait,setWait]=useState(false)
      let [pointsList,setPointsList]=useState<number[]>([])
-    let [bigImg , setBigImg] =useState(false)
-   const changeImage= (e:React.MouseEvent |React.TouchEvent )=>{
+    let [visible , setVisible] =useState(true)
+   
+    const changeImage= (e:React.MouseEvent |React.TouchEvent )=>{
         let right:number[]=[];
         let items=[];
         let imgs=[]
@@ -37,7 +36,7 @@ export const Album =(props:iprops)=>{
                     for (let i=0;i<imagesGroupChildren.length;i++){
                      items.push(imagesGroupChildren.item(i))
                     }
-                  
+                  console.log(items,img1)
                    while (true) {
                      if (items[items.length-1]?.nextElementSibling && ( items[items.length-1]?.nextElementSibling as HTMLImageElement).getAttribute('src') ) {
                        items.push(items[items.length-1]?.nextElementSibling)
@@ -154,71 +153,34 @@ export const Album =(props:iprops)=>{
           setChangeingImage(false)
       
         }
-        const resizeImage =(e:React.MouseEvent|React.TouchEvent)=>{
-          e.preventDefault()
-          setBigImg(!bigImg)
-          let img =e.target as HTMLImageElement
-          if (e.type === 'touchend' && doubleTouch>0){
-            if (img.style.width ==='98vw'){
-              setBigImg(false)
-            }
-            else {
-              setBigImg(true)
-            }
-          }
-        if (allowTouchend){
-          if (bigImg){
-        if (e.type === 'touchend' ) {
-          setDoubleTouch((pre)=>pre+1)
-          setTimeout(()=>{setDoubleTouch(0)},2000)
-        }
-         if (window.screen.width > 400 && e.type === 'click' ) {
-                 img.style.width="90vw";
-                img.style.height="90vh"
-                
-              }
-         else  {
-            if (doubleTouch >= 1) {
-              img.style.width="98vw";
-              img.style.height="85vh"
-              setDoubleTouch(0)
-          }
-          }   
-         
-              }
-          else {
-  
-            if (e.type === 'touchend'){
-        
-              if (doubleTouch >= 1) {
-                
-                img.style.width="95%";
-                img.style.height="60%";
-              }
-            }
-            else{
-              img.style.width="200px";
-              img.style.height="200px"
-            }
-            
-          }
-        }
-        }
-      
+       
      const cancelDefault=(e:React.TouchEvent)=>{
       e.preventDefault()
 
      }
+    useEffect(()=>{
+     let Image=document.querySelector('#albumItem') as HTMLImageElement
+     
+  
+  if(!Image.complete) {
+    setVisible(false)
+  }
 
+        Image?.addEventListener('load',()=>{
+          setVisible(true)
+        })
+      
+    },[])
     return (
         <div className="album" 
                    onMouseMove={changeImage} 
                    onMouseLeave={deactivateChange} >
-        
+        { visible?<React.Fragment>
                     <img id="albumItem" src={props.subject[0]} 
                        onMouseEnter={activateChange}
                        onTouchMove={changeImage}
                        onTouchEnd={cancelDefault}
+                      
                       ></img>
                     <div className="imagesGroup">
                     { props.subject.map((ele:string,index:number)=>{
@@ -227,7 +189,11 @@ export const Album =(props:iprops)=>{
                     }
                    })}
                     </div>
-                   
+                    </React.Fragment>:<div className="smallGrid">
+                                    <h3 className="waitingLabel">just a moment please,it's loading !!</h3>
+                                   <div className="waiting"></div>
+                                   </div>
+                    }
                    
                    </div>
     )
