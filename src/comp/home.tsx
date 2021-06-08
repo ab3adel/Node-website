@@ -7,7 +7,7 @@ import gate1 from '../images/python1.png'
 import gate2 from '../images/python2.png'
 import gate3 from '../images/js1.png'
 import gate4 from '../images/js2.png'
-import gate5 from '../../images/cs1.png'
+import gate5 from '../images/cs1.png'
 import gate6 from '../images/cs2.png'
 export const Home =()=>{
    const openGate= (e:Event)=>{
