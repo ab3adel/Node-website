@@ -150,7 +150,7 @@
     border-radius: 10px;
     font-size: large;
     font-weight: bolder;
-
+    color:wheat;
     animation: flagGlow 1s linear  infinite alternate-reverse ;
 
 }
