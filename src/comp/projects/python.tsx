@@ -9,7 +9,8 @@ import {VidELement} from './vidElement'
 import {Album} from './album'
 import lampon from '../../images/lampON.png'
 import lampoff from '../../images/lampOFF.png'
-export const Python:React.FC =() =>{   
+interface iprops{gate1:string,gate2:string}
+export const Python=(props:iprops) =>{   
     let [subjectTitle,setSubjectTitle]=useState('Django-React site')
     let [subjectBody,setSubjectBody]=useState('techniques used: JavaScript,Html5,Css3,Bootstrap4,jquery,D3,django REST framework,MySQL')
     let [vidSrc,setVidSrc]=useState("https://www.youtube.com/embed/KckmYVCYkL4")
@@ -109,8 +110,8 @@ export const Python:React.FC =() =>{
     return(
             <div className="section" >
               <div className="gate">
-            <img src={gate1} className="gate1"/>
-            <img src={gate2} className="gate2"/>
+            <img src={props.gate1} className="gate1"/>
+            <img src={props.gate2} className="gate2"/>
             </div>
             <div className="container" >
            
