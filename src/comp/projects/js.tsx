@@ -246,7 +246,7 @@ export const JS =(props:iprops) =>{
                       </p>
                    </div>
               <div className="curtain">
-                     <span className="flag">{!showImg? "Images":"Video"}</span>
+                     <span className="flag">{!showImg? "Video":"Images"}</span>
                      <img src={lampon} onTouchStart={sideBtnPulling} onClick={sideBtnPulling} className="sideBtnImg"/>
                      </div>
                   { !showImg ?
