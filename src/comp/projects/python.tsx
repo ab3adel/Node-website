@@ -1,8 +1,6 @@
 import React, { cloneElement, useEffect, useState } from 'react'
 import Youtube from '../../images/youtube.png'
 import Github from '../../images/github.png'
-import gate1 from '../../images/python1.png'
-import gate2 from '../../images/python2.png'
 import show from '../../images/show.png'
 import {pcImages,pythonImages} from './images'
 import {VidELement} from './vidElement'
