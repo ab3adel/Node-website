@@ -8,7 +8,8 @@ import Img1 from '../../images/python.png'
 import Img2 from '../../images/c#.png'
 import Img3 from '../../images/js.png'
 import Img4 from '../../images/ts.png'
-export const CS:React.FC =() =>{
+interface iprops{gate1:string,gate2:string}
+export const CS =(props:iprops) =>{
     let [count,setCount]=useState(0)
     let [changingImage,setChangeingImage]=useState(false)
     let [wait,setWait]=useState(false)
@@ -188,8 +189,8 @@ export const CS:React.FC =() =>{
                  <p className="popUp">soon !!</p>
               <div className="csGate">
          
-            <img src={gate1} className="csGate1"/>
-            <img src={gate2} className="csGate2"/>
+            <img src={props.gate1} className="csGate1"/>
+            <img src={props.gate2} className="csGate2"/>
         
             </div>
            
