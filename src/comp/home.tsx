@@ -3,7 +3,12 @@ import * as d3 from 'd3'
 import {CS} from './projects/cs'
 import {JS} from './projects/js'
 import {Python} from './projects/python'
-
+import gate1 from '../images/python1.png'
+import gate2 from '../images/python2.png'
+import gate3 from '../images/js1.png'
+import gate4 from '../images/js2.png'
+import gate5 from '../../images/cs1.png'
+import gate6 from '../images/cs2.png'
 export const Home =()=>{
    const openGate= (e:Event)=>{
       
@@ -54,9 +59,9 @@ export const Home =()=>{
     return (
     <div className="body">
 
-    <Python/>
-    <JS/>
-    <CS/>
+    <Python gate1={gate1} gate2={gate2}/>
+    <JS gate1={gate3} gate2 ={gate4} />
+    <CS gate1={gate5} gate2={gate6}/>
    
 
    </div>)
