@@ -133,15 +133,15 @@ export const Python=(props:iprops) =>{
                     
                      <img src={lampon} onTouchStart={sideBtnPulling} onClick={sideBtnPulling} className="sideBtnImg"/>
                      </div>
-                  { showImg ?
-                  <Album subject={subject}/>
-                  :
-                <VidELement 
+                  { !showImg ?
+                   <VidELement 
                   youtubeLink={youtubeLink} 
                   Youtube={Youtube}
                   githubLink={githubLink}
                   Github={Github}
-                  vidSrc={vidSrc}/>}
+                  vidSrc={vidSrc}/>
+                  :
+                   <Album subject={subject}/>}
            
             </div>
             </div> 
