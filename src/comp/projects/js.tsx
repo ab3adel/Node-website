@@ -1,7 +1,5 @@
 import React from 'react'
 import {useState} from 'react'
-import gate1 from '../../images/js1.png'
-import gate2 from '../../images/js2.png'
 import {jsImages} from './images'
 import show from '../../images/show.png'
 import Youtube from '../../images/youtube.png'
@@ -10,7 +8,8 @@ import {VidELement} from './vidElement'
 import {Album} from './album'
 import lampon from '../../images/lampON.png'
 import lampoff from '../../images/lampOFF.png'
-export const JS:React.FC =() =>{
+interface iprops{gate1:string,gate2:string}
+export const JS =(props:iprops) =>{
     let [changingImage,setChangeingImage]=useState(false)
     let [wait,setWait]=useState(false)
     let [bigImg,setBigImg]=useState(false)
@@ -232,8 +231,8 @@ export const JS:React.FC =() =>{
       
           <div className="section" >
               <div className="gate">
-            <img src={gate1} className="gate1"/>
-            <img src={gate2} className="gate2"/>
+            <img src={props.gate1} className="gate1"/>
+            <img src={props.gate2} className="gate2"/>
             </div>
             <div className="container" >
                
