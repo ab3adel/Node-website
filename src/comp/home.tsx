@@ -3,13 +3,10 @@ import * as d3 from 'd3'
 import {CS} from './projects/cs'
 import {JS} from './projects/js'
 import {Python} from './projects/python'
-import gate1 from '../images/python1.png'
-import gate2 from '../images/python2.png'
-import gate3 from '../images/js1.png'
-import gate4 from '../images/js2.png'
-import gate5 from '../images/cs1.png'
-import gate6 from '../images/cs2.png'
-export const Home =()=>{
+
+interface iprops {gate1:string,gate2:string,gate3:string,gate4:string,gate5:string,gate6:string}
+export const Home =(props:iprops)=>{
+   const {gate1,gate2,gate3,gate4,gate5,gate6}=props
    const openGate= (e:Event)=>{
       
         let i:number=0;
