@@ -21,39 +21,7 @@ export const JS =() =>{
     let [showImg,setShowImg]=useState(true)
     let [subject,setSubject]=useState(jsImages)
     let [loaded,setLoaded]=useState(false)
-          const switching =(e:React.MouseEvent|React.TouchEvent)=>{
-  
-      let btn = e.currentTarget as HTMLButtonElement
-  
- 
-      
-      if (btn.innerText === 'web') {
-        let nxtBtn =btn.nextElementSibling as HTMLButtonElement
-       
-     
-      btn.insertAdjacentElement('beforebegin',nxtBtn)
-      btn.innerText='pc'
-      nxtBtn.innerText='web'
-      setSubject(pcImages)
-      setSubjectTitle('Accountatn app ')
-      setSubjectBody('full functional accountant app build with pure python using Qt library ,MySQL database')
-      setYoutubeLink('https://www.youtube.com/watch?v=JzVG9PiVHUw')
-      setGitHubLink ('https://github.com/ab3adel/accountant-Python')
-      setVidSrc("https://www.youtube.com/embed/JzVG9PiVHUw")
-     }
-     else {
-      let nxtBtn =btn.previousElementSibling as HTMLButtonElement
-      btn.insertAdjacentElement('afterend',nxtBtn)
-      btn.innerText='web'
-      nxtBtn.innerText='pc'
-      setSubject(pythonImages)
-      setSubjectTitle('Django-React site')
-      setSubjectBody('techniques used: JavaScript,Html5,Css3,Bootstrap4,jquery,D3,django REST framework,MySQL')
-      setYoutubeLink('https://www.youtube.com/watch?v=KckmYVCYkL4')
-      setVidSrc("https://www.youtube.com/embed/KckmYVCYkL4")
-      setGitHubLink ('https://github.com/ab3adel/React_Django')
-     }
-    }
+          
         const showDetail=(e:React.TouchEvent)=>{
           let target =e.currentTarget as HTMLDivElement
           let title =target.getElementsByClassName('descriptionTitle')[0] as HTMLHeadingElement
