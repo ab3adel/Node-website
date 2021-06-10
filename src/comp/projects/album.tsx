@@ -36,7 +36,7 @@ export const Album =(props:iprops)=>{
                     for (let i=0;i<imagesGroupChildren.length;i++){
                      items.push(imagesGroupChildren.item(i))
                     }
-                  console.log(items,img1)
+                  
                    while (true) {
                      if (items[items.length-1]?.nextElementSibling && ( items[items.length-1]?.nextElementSibling as HTMLImageElement).getAttribute('src') ) {
                        items.push(items[items.length-1]?.nextElementSibling)
