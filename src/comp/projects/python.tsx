@@ -1,23 +1,26 @@
 import React, { cloneElement, useEffect, useState } from 'react'
 import Youtube from '../../images/youtube.png'
 import Github from '../../images/github.png'
+
 import show from '../../images/show.png'
 import {pcImages,pythonImages} from './images'
 import {VidELement} from './vidElement'
 import {Album} from './album'
 import lampon from '../../images/lampON.png'
 import lampoff from '../../images/lampOFF.png'
-interface iprops{gate1:string,gate2:string}
-export const Python=(props:iprops) =>{   
+import gate1 from '../../images/python1.png'
+import gate2 from '../../images/python2.png'
+
+export const Python =() =>{   
     let [subjectTitle,setSubjectTitle]=useState('Django-React site')
-    let [subjectBody,setSubjectBody]=useState('techniques used: JavaScript,Html5,Css3,Bootstrap4,jquery,D3,django REST framework,MySQL')
+    let [subjectBody,setSubjectBody]=useState('The used techniques: JavaScript,Html5,Css3,Bootstrap4,jquery,D3,django REST framework,MySQL')
     let [vidSrc,setVidSrc]=useState("https://www.youtube.com/embed/KckmYVCYkL4")
      let [youtubeLink,setYoutubeLink]=useState('https://www.youtube.com/watch?v=KckmYVCYkL4')
      let [githubLink,setGitHubLink]=useState('https://github.com/ab3adel/React_Django')
     let [subject,setSubject] =useState(pythonImages)
     let [showImg,setShowImg]=useState(true)
     let [mobileView,setMobileView]=useState(false)
-
+    let [loaded,setLoaded]=useState(false)
      const switching =(e:React.MouseEvent|React.TouchEvent)=>{
   
       let btn = e.currentTarget as HTMLButtonElement
@@ -97,19 +100,20 @@ export const Python=(props:iprops) =>{
       
       }
     
-    useEffect(()=>{
-      if (window.screen.width < 400){
-       setMobileView(true)
-      }
-     
-
-    },[])
+      const imgLoaded=()=>{
+        setLoaded(true)
+        document.querySelector('#detector')?.remove()
+       }
+  
 
     return(
-            <div className="section" >
+         <React.Fragment>
+            <img src={gate1} onLoad={imgLoaded} id="detector" style={{"display":"none"}}/>
+            {loaded?
+              <div className="sectionpy" >
               <div className="gate">
-            <img src={props.gate1} className="gate1"/>
-            <img src={props.gate2} className="gate2"/>
+            <img src={gate1}  className="gate1"/>
+            <img src={gate2} className="gate2"/>
             </div>
             <div className="container" >
            
@@ -134,16 +138,24 @@ export const Python=(props:iprops) =>{
                      <img src={lampon} onTouchStart={sideBtnPulling} onClick={sideBtnPulling} className="sideBtnImg"/>
                      </div>
                   { !showImg ?
-                   <VidELement 
+                  <Album subject={subject}/>
+                  :
+                  <VidELement 
                   youtubeLink={youtubeLink} 
                   Youtube={Youtube}
                   githubLink={githubLink}
                   Github={Github}
-                  vidSrc={vidSrc}/>
-                  :
-                   <Album subject={subject}/>}
+                  vidSrc={vidSrc}/> }
            
             </div>
-            </div> 
-    )
+            </div> :
+             <div className="noScroll">
+             <span></span>
+             <span></span>
+             <span></span>
+           </div>
+            }
+            </React.Fragment>
+    ) 
+
 }
