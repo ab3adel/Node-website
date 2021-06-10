@@ -1,8 +1,29 @@
-.section {
+.sectionpy{
     position: relative;
-    margin-bottom: 10px;
+  
    box-shadow:5px 5px 5px rgb(151, 144, 130,0.4) ;
-   width:100vw
+   width:100vw;
+   height: 100vh;
+   grid-row:1/1; 
+}
+.sectionjs {
+    position: relative;
+   
+   box-shadow:5px 5px 5px rgb(151, 144, 130,0.4) ;
+   width:100vw;
+   grid-row:2/2;
+   height: 100vh;
+    
+}
+.sectioncs {
+    position: relative;
+  
+   box-shadow:5px 5px 5px rgb(151, 144, 130,0.4) ;
+   width:100vw;
+   grid-row:3/3;
+
+   height:100vh ;
+
     
 }
 .gate{
@@ -34,28 +55,29 @@
     height: 49%;
 }
 .csGate{
-    position: absolute;
-    top: 3px;;
+
+   
     display: flex;
     flex-direction: column;
-   
+   grid-row: 3/3;
     height: 100vh;
     width:100vw;
+    z-index: 1;
 }
 .csGate1 {
-    z-index: 0;
+   
     box-shadow: 5px 6px 7px rgb(90, 88, 88);
-   transform-origin: top;
+
   border-bottom-left-radius:60px;
   border-bottom-right-radius:60px;
   border:1mm solid black;
-  height: 49%;
+  height: 50%;
  
 }
 .csGate2{
-    z-index: 0;
+   
     box-shadow: 5px 6px 7px rgb(90, 88, 88);
-    transform-origin: bottom;
+
     border-top-left-radius:60px;
     border-top-right-radius:60px;
     height: 49%;
@@ -150,7 +172,7 @@
     border-radius: 10px;
     font-size: large;
     font-weight: bolder;
-    color:#F0F8FF;
+    color:honeydew;
     animation: flagGlow 1s linear  infinite alternate-reverse ;
 
 }
