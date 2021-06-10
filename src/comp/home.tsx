@@ -4,8 +4,7 @@ import {CS} from './projects/cs'
 import {JS} from './projects/js'
 import {Python} from './projects/python'
 
-interface iprops {gate1:string,gate2:string,gate3:string,gate4:string,gate5:string,gate6:string}
-export const Home =(props:iprops)=>{
+export const Home =()=>{
    const {gate1,gate2,gate3,gate4,gate5,gate6}=props
    const openGate= (e:Event)=>{
       
@@ -56,9 +55,9 @@ export const Home =(props:iprops)=>{
     return (
     <div className="body">
 
-    <Python gate1={gate1} gate2={gate2}/>
-    <JS gate1={gate3} gate2 ={gate4} />
-    <CS gate1={gate5} gate2={gate6}/>
+    <Python />
+    <JS  />
+    <CS />
    
 
    </div>)
