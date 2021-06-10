@@ -5,7 +5,7 @@ import {JS} from './projects/js'
 import {Python} from './projects/python'
 
 export const Home =()=>{
-   const {gate1,gate2,gate3,gate4,gate5,gate6}=props
+
    const openGate= (e:Event)=>{
       
         let i:number=0;
