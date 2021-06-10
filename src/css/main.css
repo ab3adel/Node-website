@@ -5,7 +5,7 @@ html {
 }
 .main {
     display: grid;
-    grid-template-rows: 50px 360px 1fr 30px ;
+    grid-template-rows: 50px auto auto 40px ;
     background-image: linear-gradient(to left top , rgb(175, 190, 175,0.4),rgb(0, 0, 0)) ;
     background-repeat: no-repeat;
     background-size: 100% 80% , cover;
@@ -37,9 +37,11 @@ html {
 }
 .body {
     display: grid;
-    grid-template-rows: repeat(3,100vh);
+    grid-template-rows:  minmax(60px,auto) minmax(60px,auto)  minmax(60px,auto) ;
     grid-template-columns: 100vw;
     grid-row:2/4;
+   
+   
 }
 br {
     border-radius: 5px bold wheat;
@@ -94,6 +96,8 @@ br {
     background: linear-gradient(to left ,black ,rgb(136, 133, 133));
     border-radius: 40px;
     position: relative;
+    grid-row:2/2;
+    grid-column: 1/1;
 }
 #me {
     width:250px;
@@ -244,7 +248,7 @@ br {
     color:wheat;
 }
 
-.footerLink a:hover, .footerLink a:focus {
+.footerLink a:hover {
     font-size: x-large;
     text-shadow: 3px 6px 6px grey;
     transform: rotateZ(10deg);
@@ -274,7 +278,7 @@ br {
     color:wheat;
 }
 
-.footerLink1 a:hover, .footerLink a:focus {
+.footerLink1 a:hover {
     font-size: x-large;
     text-shadow: 3px 6px 6px grey;
     transform: rotateZ(10deg);
@@ -292,6 +296,8 @@ br {
     box-shadow: 7px 7px 8px  honeydew;
     height: 30px;
     margin-top: 5px;
+    grid-row:4/4;
+    grid-column: 1/1;
 }
 .last a {
     width:200px;
@@ -315,7 +321,50 @@ br {
     transition-duration: 1s;
     border-radius: 30px;
 }
-
+.noScroll {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    min-height: 60px;
+ 
+    margin-top: 30px;
+}
+.noScroll span {
+    width:50px;
+    height: 50px;
+    border-radius: 50px;
+    background: rgb(24, 31, 17);
+    animation: noScroll 1s linear  infinite;
+    display: block;
+}
+@keyframes noScroll {
+    0% {
+        width:50px;
+        height: 50px;
+        opacity: 1;
+        box-shadow: rgb(30, 51, 8) 3px 3px 2px ;
+    }
+    50%{
+        width:25px;
+        height: 25px;
+        opacity: 0.6;
+        box-shadow: rgb(30, 51, 8) 1px 1px 1px ;
+    }
+    100%{
+        opacity: 0.1;
+        width:5px;
+        height: 5px;
+    }
+}
+.noScroll span:nth-child(1) {
+animation-delay: 1s;
+}
+.noScroll span:nth-child(2) {
+    animation-delay: 1.5s;  
+}
+.noScroll span:nth-child(3) {
+    animation-delay: 2s;  
+}
 /* #################################3 IPad ViEW ####################### */
 
 @media only screen and (max-width:900px) and (min-width:420px){
@@ -332,7 +381,7 @@ br {
    
     .main {
         display: grid;
-        grid-template-rows: 50px 360px 1fr 50px ;
+        grid-template-rows: 50px auto auto 30px ;
         background-image: linear-gradient(to left top , rgb(175, 190, 175,0.4),rgb(0, 0, 0)) ;
         background-repeat: no-repeat;
         background-size: 100% , cover;
@@ -354,7 +403,7 @@ br {
     }
     .body {
         display: grid;
-        grid-template-rows: repeat(3,100vh);
+        grid-template-rows:  minmax(60px,auto) minmax(60px,auto)  minmax(60px,auto) ;
     }
     .me {
         width:97vw
