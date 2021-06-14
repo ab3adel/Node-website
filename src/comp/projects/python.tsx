@@ -35,7 +35,7 @@ export const Python =() =>{
       btn.innerText='pc'
       nxtBtn.innerText='web'
       setSubject(pcImages)
-      setSubjectTitle('Accountatn app ')
+      setSubjectTitle('Accountant Pc App ')
       setSubjectBody('full functional accountant app build with pure python using Qt library ,MySQL database')
       setYoutubeLink('https://www.youtube.com/watch?v=JzVG9PiVHUw')
       setGitHubLink ('https://github.com/ab3adel/accountant-Python')
