@@ -32,7 +32,7 @@ return (
                     onMouseLeave={dtLighten}>
                     <Link onMouseLeave={dtLighten} 
                     onTouchEnd={dtLighten} 
-                    to ="/portofolio">Portofolio</Link>
+                    to ="/portofolio">Portfolio</Link>
                     </div>
                     <div className="footerLink1" 
                     onTouchStart={lighten} 
