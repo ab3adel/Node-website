@@ -24,7 +24,7 @@ import tele from '../images/telegram.png'
                 
                <Link to ="/">Home</Link>
                 <Link to ='/about'>About</Link>
-                <Link to ="/portofolio">Portofolio</Link>
+                <Link to ="/portfolio">Portofolio</Link>
                 </div>
       
           
