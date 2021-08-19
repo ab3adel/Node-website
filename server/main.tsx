@@ -16,6 +16,6 @@ let index = fs.readFileSync(path.resolve(__dirname,'../dist/index.html'),{encodi
 index.replace("<div id='root'></div>",`<div id='root'>${JSON.stringify(app)}</div>`)
 res.status(200).send(index)
 })
-home.listen(9000,()=>{
+home.listen(process.env.PORT || 5000,()=>{
     console.log('connected')
 })
