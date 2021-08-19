@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack  && node ./distServer/server.js",
-    "front": "  webpack serve  "
+    "start": "node ./distServer/server.js",
+   "postinstall":"tsc",
+    "build": "webpack"
   },
   "author": "",
   "license": "ISC",
