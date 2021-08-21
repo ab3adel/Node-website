@@ -2,7 +2,9 @@ import React, { useEffect } from 'react'
 import 
 {Paper
 ,makeStyles
-,Button} 
+,Button
+,Fade
+,Snackbar} 
 from '@material-ui/core'
 import {useHistory} from 'react-router-dom'
 const useStyle=makeStyles({
@@ -59,13 +61,15 @@ for (let i=0;i<lst.length;i++){
   }
 }
 interface Props {setDelete?:Function}
+
+
 export const About= (props:Props) =>{
 
   const historical=useHistory()
 const classes=useStyle()
 
 const {setDelete}=props
-
+const [keep,setKeep]=React.useState(true)
 useEffect(()=>{
 setInterval(()=>{generateStar()},4000)
 },[])
@@ -78,19 +82,29 @@ const handleDelete=(value:boolean)=>{
   if (typeof setDelete === 'function') setDelete(value)
   historical.push('/')
 }
+const keepSection=()=>{
+   setKeep(false)
+}
     return (
       <>
 
       
         <div className="about"  >
         <div className="star"></div>
+         <Fade in={keep}>
             <Paper elevation={8} className={classes.paper}>
               I dont Know what is the purpose of this section <br></br>
               however, you can delet it 
               
               <Button className={classes.button} onClick={()=>handleDelete(true)}>  Delete it</Button>
-              <Button className={classes.button} onClick={()=>deleteSeciotn()}> Keep it</Button>
+              <Button className={classes.button} onClick={()=>keepSection()}> Keep it</Button>
            </Paper>
+           </Fade>
+           {!keep && (
+
+              <span className="aboutMotion">About</span>
+              
+           )}
         </div>
         </>
     )
