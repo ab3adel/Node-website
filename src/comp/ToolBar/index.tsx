@@ -34,6 +34,7 @@ const useStyle=makeStyles(Theme=>({
         "&:hover":{
          color:"white",
             fontWeight:"bolder"
+        }
     },
     delete:{
         color:"black"
