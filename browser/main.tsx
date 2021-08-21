@@ -4,6 +4,7 @@ import {BrowserRouter as Router} from 'react-router-dom'
 import '../src/css/main.css'
 import '../src/css/projects.css'
 import 'bootstrap/dist/css/bootstrap.css'
+import '../src/css/about.css'
 declare var isBrowser:boolean;
 let method = isBrowser ?  ReactDOM.render : ReactDOM.hydrate
 method(<Router><App/></Router>,document.getElementById('root'))
