@@ -1,0 +1,27 @@
+.aboutMotion{
+    margin:0px;
+    display:flex;
+    font-size: 2.8rem;
+    font-weight: 400;
+    color:wheat;
+    text-shadow: 3px 4px 5px rgb(218, 218, 218);
+    animation: aboutMotion 10s linear   infinite  alternate-reverse;
+    perspective: 800px;
+    
+}
+@keyframes aboutMotion {
+    0%{
+        transform: translate(150px,150px);
+    }
+    50%{
+        transform: translate(0px,-150px);
+    }
+    75%{
+        transform: translate(-50px,150px);
+    }
+    100%{
+        transform: translate(-100px,-150px);
+    }
+    
+    
+}
